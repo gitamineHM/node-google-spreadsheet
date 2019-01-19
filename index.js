@@ -283,6 +283,8 @@ var GoogleSpreadsheet = function( ss_key, auth_id, options ){
 
     if ( opts.orderby ) query["orderby"] = opts.orderby;
     if ( opts.reverse ) query["reverse"] = 'true';
+    if ( opts['min-col'] ) query["min-col"] = opts['min-col'];
+
     if ( opts.query ) query['sq'] = opts.query;
 
     self.makeFeedRequest( ["list", ss_key, worksheet_id], 'GET', query, function(err, data, xml) {
